@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - Join Al-Ahad Quran Academy Online Quran Classes</title>
+    <meta name="description" content="Enroll at Al-Ahad Quran Academy and start your Quran learning journey. Fill the online form to join Tajweed and Memorization classes now!">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76J7LYS3HT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-76J7LYS3HT');
+</script>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .form-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--maincolor); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+        .submit-btn { background: var(--tertiarycolor); color: var(--secondarycolor); border: none; padding: 15px 30px; border-radius: 30px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.3s; }
+        .submit-btn:hover { background: var(--maincolor); color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="/index.html"><img class="logo" src="Assets/LOGO.png" alt="Al Ahad Logo"></a>
+                <a href="/index.html" class="logo-link"><span class="logo-text"><h3>AL AHAD QURAN ACADEMY</h3></span></a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/enroll.html">Enroll Now</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li class="whatsapp-btn">
+                    <a href="https://api.whatsapp.com/send/?phone=923258533906"><h4>WhatsApp Now</h4></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-color: var(--maincolor); padding: 80px 20px; text-align: center; color: white;">
+            <h1>Join Our Academy</h1>
+            <p style="color: var(--tertiarycolor); margin-top: 10px;">Fill out the form below to book your free trial class</p>
+        </section>
+
+        <div class="form-container">
+            <form id="enrollmentForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" placeholder="+92 ..." required>
+                </div>
+                <div class="form-group">
+                    <label>Course Interest</label>
+                    <select id="course" required>
+                        <option value="">Select a course</option>
+                        <option value="Learn Qaida">Learn Qaida</option>
+                        <option value="Quran with Tajweed">Quran with Tajweed</option>
+                        <option value="Supplications and Kalmas">Supplications and Kalmas</option>
+                        <option value="Salat and Sunnah">Salat and Sunnah</option>
+                        <option value="Selected Surah">Selected Surah</option>
+                        <option value="Hifzul Quran">Hifzul Quran</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Time Slot</label>
+                    <input type="text" id="time" placeholder="e.g. 6:00 PM to 8:00 PM">
+                </div>
+                <button type="submit" class="submit-btn">Send Enrollment Request via WhatsApp</button>
+            </form>
+        </div>
+    </main>
+
+    <footer id="footer-container">
+        <div class="footer-top">
+            <div class="logo-area">
+                <img src="Assets/Quran Pak logo.png" alt="Logo">
+                <h2>AL AHAD QURAN ACADEMY</h2>
+            </div>
+            <div class="links">
+                <h2>Quick Links</h2>
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/enroll.html">Enroll Now</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+        <hr class="footer-line">
+        <div class="footer-bottom">
+            <p>© 2026 Al Ahad Online Quran Academy.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('toggle');
+        });
+
+        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const course = document.getElementById('course').value;
+            const time = document.getElementById('time').value;
+
+            const message = `*New Enrollment Request*%0A%0A*Name:* ${name}%0A*WhatsApp:* ${whatsapp}%0A*Course:* ${course}%0A*Time:* ${time}`;
+            window.open(`https://api.whatsapp.com/send?phone=923258533906&text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
